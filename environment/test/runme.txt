@@ -1,0 +1,26 @@
+to add subnet edit below files:
+1. edit nginx_private_subnet file by adding rta in subnet association
+2/ edit output.tf file in vpc to have join()
+3. edit application/bckend-app/nginx/nginx.tf file to have split in its var subnet variable
+4.edit deploy.tf file to have extra nginx_private_ranges, az_var etc
+
+
+
+
+-----------------
+create an s3 bucket manually
+create ec2 instance key pair manually
+terraform taint "module.ec2_amazon_linux.aws_instance.this"
+
+cd /enbd-aws-infra/environment/test
+terraform init
+terraform plan
+terraform apply
+
+This will go in Infra and Network account
+Create VPC, preivate public subnet, route table and routes. Internet gateway and nat gateway
+Vpc endpoint and transit gateway and direct connect to reach on premise DC
+
+Create accounts under aws organization
+
+Create ec2 instances
